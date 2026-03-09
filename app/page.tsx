@@ -1,16 +1,14 @@
 "use client";
 
-import handler from "@/utils/handler";
 import notfollower from "@/lib/data/notfollower.json";
-import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {Separator} from "@/components/ui/separator";
+import Link from "next/link";
 import { removeUser } from "./actions";
 import { useState } from "react";
+
 export default function Home() {
   const [notfollowers, setNotfollowers] = useState(notfollower);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
   // console.log(handler());
   return (
     <>
@@ -37,19 +35,23 @@ export default function Home() {
                   </dt>
                 </div>
                 <dd className="text-muted-foreground">
-                  <Button
-                    variant="destructive"
-                    className="hover:bg-red-600 transition-colors"
-                    onClick={async () => {
-                      await removeUser(item.title);
-                      setNotfollowers((prev) =>
-                        prev.filter((user) => user.title !== item.title),
-                      );
-                      window.open(item.link, "_blank");
-                    }}
-                  >
-                    Unfollow
-                  </Button>
+                  
+                    <Button
+                      variant="destructive"
+                      className="hover:bg-red-600 transition-colors"
+            
+                         onClick={async (e) => {
+                  e.preventDefault();
+                  await removeUser(item.title);
+                  setNotfollowers(prev => prev.filter(user => user.title !== item.title));
+                  window.open(item.link, "_blank");
+
+
+                      }}
+                    >
+                      Unfollow
+                    </Button>
+                 
                 </dd>
               </div>
             ))}
