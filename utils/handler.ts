@@ -12,11 +12,21 @@ const notfollowers:{title:string , link:string }[] =  [] //this array will store
 
 export default function handler(){
 
-    const followingLength = following.relationships_following.length; //the number of my following
+  const followersLength = followers.length; //the number of my followers
 
-   for (let index = 0; index < followingLength; index++) {
+//   return followersLength;
+
+   for (let index = 0; index < followersLength; index++) {
     
-    const element = following.relationships_following[index];
+    const followerUser = followers[index].string_list_data[0].value;
+    const followingUser = following.relationships_following[index].title;
+    
+    if(followerUser !== followingUser){
+      notfollowers.push({
+        title: followingUser,
+        link: following.relationships_following[index].string_list_data[0].href
+      });
+    }
     
     
    }
