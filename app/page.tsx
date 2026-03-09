@@ -31,12 +31,19 @@ export default function Home() {
                     </span>
                   </div>
                   <dt className="text-lg font-medium text-gray-900">
-                    {item.title}
+                   <a href={item.link} target="_blank" rel="noopener noreferrer" onClick={async (e) => {
+                  e.preventDefault();
+                  await removeUser(item.title);
+                  setNotfollowers(prev => prev.filter(user => user.title !== item.title));
+                  window.open(item.link, "_blank");
+
+
+                      }}>{item.title}</a>
                   </dt>
                 </div>
                 <dd className="text-muted-foreground">
                   
-                    <Button
+                    {/* <Button
                       variant="destructive"
                       className="hover:bg-red-600 transition-colors"
             
@@ -50,7 +57,7 @@ export default function Home() {
                       }}
                     >
                       Unfollow
-                    </Button>
+                    </Button> */}
                  
                 </dd>
               </div>
