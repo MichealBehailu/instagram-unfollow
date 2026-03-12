@@ -32,6 +32,14 @@ export default function Home() {
                     </span>
                   </div>
 
+{/* 
+
+ <Link href={item.link} target="_blank">
+{item.link}
+</Link>
+
+*/}
+
                   <dt className="text-lg font-medium text-gray-900">
                    <a href={item.link} target="_blank" rel="noopener noreferrer" onClick={async (e) => {
                   e.preventDefault();
