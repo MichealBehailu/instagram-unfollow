@@ -35,7 +35,7 @@ export default function Home() {
 {/* 
 
  <Link href={item.link} target="_blank">
-{item.link}
+{item.title}
 </Link>
 
 */}
