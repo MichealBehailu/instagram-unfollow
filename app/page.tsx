@@ -42,10 +42,10 @@ export default function Home() {
 
                   <dt className="text-lg font-medium text-gray-900">
                    <a href={item.link} target="_blank" rel="noopener noreferrer" onClick={async (e) => {
+                     window.open(item.link, "_blank");
                   e.preventDefault();
                   await removeUser(item.title);
                   setNotfollowers(prev => prev.filter(user => user.title !== item.title));
-                  window.open(item.link, "_blank");
 
 
                       }}>{item.title}</a>
