@@ -34,7 +34,7 @@ export default function Home() {
                   <dt className="text-lg font-medium text-gray-900">
                     <a
                       href={item.link}
-                      target="_blank"
+                     
                       rel="noopener noreferrer"
                       onClick={(e) => {
                         e.preventDefault();
