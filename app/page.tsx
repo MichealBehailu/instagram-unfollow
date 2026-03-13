@@ -36,10 +36,10 @@ export default function Home() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={async (e) => {
+                      onClick={(e) => {
                         e.preventDefault();
                         window.open(item.link, "_blank");
-                        await removeUser(item.title);
+                        removeUser(item.title);
                         setNotfollowers((prev) =>
                           prev.filter((user) => user.title !== item.title),
                         );
