@@ -16,7 +16,7 @@ export default function Home() {
         <div className="w-full max-w-2xl">
           
           <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-            People that don't follow back
+            User's that doesn't follow you back
           </h1>
           <div className="space-y-4">
             {notfollowers.map((item) => (
@@ -31,14 +31,6 @@ export default function Home() {
                       {item.title.charAt(0).toUpperCase()}
                     </span>
                   </div>
-
-{/* 
-
- <Link href={item.link} target="_blank">
-{item.title}
-</Link>
-
-*/}
 
                   <dt className="text-lg font-medium text-gray-900">
                    <a href={item.link} target="_blank" rel="noopener noreferrer" onClick={async (e) => {
