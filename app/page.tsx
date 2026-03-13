@@ -25,7 +25,7 @@ export default function Home() {
                 className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-center space-x-4">
-//this is for the avatar to show next to the title 
+{/* //this is for the avatar to show next to the title  */}
                   <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
                     <span className="text-gray-600 font-semibold">
                       {item.title.charAt(0).toUpperCase()}
