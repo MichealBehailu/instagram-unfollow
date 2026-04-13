@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [notfollowers, setNotfollowers] = useState(notfollower);
-  // console.log(handler());
+  // console.log(handler()); //executed only one times just to get the unfollowers
   return (
     <>
       <section className="flex min-h-screen items-center justify-center p-8">
